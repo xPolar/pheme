@@ -1,0 +1,31 @@
+{
+	"name": "pheme",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "wrangler dev",
+		"deploy": "wrangler deploy --minify",
+		"cf-typegen": "wrangler types --env-interface CloudflareBindings",
+		"prepare": "husky install"
+	},
+	"lint-staged": {
+		"*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+			"biome check --write --no-errors-on-unmatched"
+		]
+	},
+	"dependencies": {
+		"dotenv": "^16.4.7",
+		"drizzle-orm": "^0.43.1",
+		"hono": "^4.6.9"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@cloudflare/workers-types": "^4.20241106.0",
+		"@types/node": "^22.9.0",
+		"drizzle-kit": "^0.31.1",
+		"husky": "^9.1.6",
+		"lint-staged": "^15.2.10",
+		"tsx": "^4.19.2",
+		"wrangler": "^3.83.0"
+	}
+}
